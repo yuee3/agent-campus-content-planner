@@ -1,0 +1,19 @@
+{
+  "run_id": "r-575aa2f7",
+  "input_summary": {
+    "topic": "校园咖啡节",
+    "budget": null,
+    "deadline": "2026-11-05"
+  },
+  "final_status": "missing_input",
+  "message": "缺少必填信息：预算 budget（数字），无法开始规划",
+  "plan": {
+    "steps": []
+  },
+  "cost": null,
+  "saved_plan_id": null,
+  "incomplete_reason": "缺口：预算 budget（数字）",
+  "steps_used": 1,
+  "step_limit": 12,
+  "trace_file": "examples/missing.trace.json"
+}

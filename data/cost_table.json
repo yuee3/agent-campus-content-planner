@@ -1,0 +1,18 @@
+{
+  "plan_costs": {
+    "standard": {
+      "script_writing": 6,
+      "channel_promotion": 6
+    },
+    "lite": {
+      "script_writing": 4,
+      "channel_promotion": 4
+    }
+  },
+  "tool_fees": {
+    "search_materials": { "cost": 0, "seconds": 2 },
+    "generate_script": { "cost": 0, "seconds": 5 },
+    "estimate_cost": { "cost": 0, "seconds": 1 },
+    "save_plan": { "cost": 0, "seconds": 1 }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "run_id": "r-575aa2f7",
+  "started_at": "2026-10-28T17:39:48",
+  "task": {
+    "topic": "校园咖啡节",
+    "deadline": "2026-11-05",
+    "inject": {
+      "script_fail_once": false
+    }
+  },
+  "steps": [],
+  "final": {
+    "steps_used": 1,
+    "final_status": "missing_input",
+    "message": "缺少必填信息：预算 budget（数字），无法开始规划",
+    "plan": {
+      "steps": []
+    },
+    "cost": null,
+    "saved_plan_id": null,
+    "incomplete_reason": "缺口：预算 budget（数字）",
+    "step_limit": 12
+  }
+}

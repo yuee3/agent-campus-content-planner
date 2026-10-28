@@ -1,0 +1,58 @@
+{
+  "run_id": "r-b7341dbe",
+  "input_summary": {
+    "topic": "校园咖啡节",
+    "budget": 10,
+    "deadline": "2026-11-05"
+  },
+  "final_status": "completed",
+  "message": "方案已保存（仅保存方案，未执行真实投放）",
+  "plan": {
+    "steps": [
+      {
+        "tool": "search_materials",
+        "tier": null,
+        "status": "success"
+      },
+      {
+        "tool": "generate_script",
+        "tier": "standard",
+        "status": "success"
+      },
+      {
+        "tool": "estimate_cost",
+        "tier": "standard",
+        "status": "success"
+      },
+      {
+        "tool": "generate_script",
+        "tier": "lite",
+        "status": "success"
+      },
+      {
+        "tool": "estimate_cost",
+        "tier": "lite",
+        "status": "success"
+      },
+      {
+        "tool": "save_plan",
+        "tier": null,
+        "status": "success"
+      }
+    ]
+  },
+  "cost": {
+    "budget": 10,
+    "estimated_total": 8,
+    "breakdown": {
+      "script_writing": 4,
+      "channel_promotion": 4
+    },
+    "within_budget": true
+  },
+  "saved_plan_id": "p-1",
+  "incomplete_reason": null,
+  "steps_used": 7,
+  "step_limit": 12,
+  "trace_file": "examples/budget-overrun.trace.json"
+}

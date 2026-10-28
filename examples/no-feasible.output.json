@@ -1,0 +1,53 @@
+{
+  "run_id": "r-9c887045",
+  "input_summary": {
+    "topic": "校园咖啡节",
+    "budget": 5,
+    "deadline": "2026-11-05"
+  },
+  "final_status": "incomplete",
+  "message": "没有任何可行档位，返回未完成及缺口",
+  "plan": {
+    "steps": [
+      {
+        "tool": "search_materials",
+        "tier": null,
+        "status": "success"
+      },
+      {
+        "tool": "generate_script",
+        "tier": "standard",
+        "status": "success"
+      },
+      {
+        "tool": "estimate_cost",
+        "tier": "standard",
+        "status": "success"
+      },
+      {
+        "tool": "generate_script",
+        "tier": "lite",
+        "status": "success"
+      },
+      {
+        "tool": "estimate_cost",
+        "tier": "lite",
+        "status": "success"
+      }
+    ]
+  },
+  "cost": {
+    "budget": 5,
+    "estimated_total": 8,
+    "breakdown": {
+      "script_writing": 4,
+      "channel_promotion": 4
+    },
+    "within_budget": false
+  },
+  "saved_plan_id": null,
+  "incomplete_reason": "无可行方案：最低档位 lite 估算 8 模拟单位，超出预算 5，缺口 3 模拟单位；不保存超预算方案",
+  "steps_used": 6,
+  "step_limit": 12,
+  "trace_file": "examples/no-feasible.trace.json"
+}

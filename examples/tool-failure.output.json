@@ -1,0 +1,53 @@
+{
+  "run_id": "r-adf54ca8",
+  "input_summary": {
+    "topic": "校园咖啡节",
+    "budget": 20,
+    "deadline": "2026-11-05"
+  },
+  "final_status": "completed",
+  "message": "方案已保存（仅保存方案，未执行真实投放）",
+  "plan": {
+    "steps": [
+      {
+        "tool": "search_materials",
+        "tier": null,
+        "status": "success"
+      },
+      {
+        "tool": "generate_script",
+        "tier": "standard",
+        "status": "failed"
+      },
+      {
+        "tool": "generate_script",
+        "tier": "standard",
+        "status": "success"
+      },
+      {
+        "tool": "estimate_cost",
+        "tier": "standard",
+        "status": "success"
+      },
+      {
+        "tool": "save_plan",
+        "tier": null,
+        "status": "success"
+      }
+    ]
+  },
+  "cost": {
+    "budget": 20,
+    "estimated_total": 12,
+    "breakdown": {
+      "script_writing": 6,
+      "channel_promotion": 6
+    },
+    "within_budget": true
+  },
+  "saved_plan_id": "p-1",
+  "incomplete_reason": null,
+  "steps_used": 6,
+  "step_limit": 12,
+  "trace_file": "examples/tool-failure.trace.json"
+}

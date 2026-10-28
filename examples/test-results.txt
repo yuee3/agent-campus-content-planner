@@ -1,0 +1,23 @@
+$ python -m unittest discover -s tests -v
+
+test_1_normal_complete (test_acceptance.AcceptanceTests.test_1_normal_complete)
+验收点：正常完成（预算 20 足够 standard 档 12）。 ... ok
+test_2_budget_overrun_replan (test_acceptance.AcceptanceTests.test_2_budget_overrun_replan)
+验收点：预算超限（参考实例：预算 10，standard 估算 12 超限，改选 lite 8）。 ... ok
+test_3_no_feasible_plan_gap (test_acceptance.AcceptanceTests.test_3_no_feasible_plan_gap)
+参考实例：没有可行方案时返回未完成及缺口，不保存超预算方案。 ... ok
+test_4_missing_budget (test_acceptance.AcceptanceTests.test_4_missing_budget)
+验收点：缺预算 -> 未完成并给出缺口，不编造、不调用工具。 ... ok
+test_5_tool_failure_retry_keeps_success (test_acceptance.AcceptanceTests.test_5_tool_failure_retry_keeps_success)
+验收点+加分项：注入一次脚本生成失败 -> 重试成功；失败步骤保留 failed 记录， ... ok
+test_6_duplicate_execution (test_acceptance.AcceptanceTests.test_6_duplicate_execution)
+验收点：重复执行 -> 相同请求只产生一份方案，第二次返回 duplicate。 ... ok
+test_7_max_steps_incomplete (test_acceptance.AcceptanceTests.test_7_max_steps_incomplete)
+边界：达到步数上限时返回明确的未完成状态。 ... ok
+test_cli_invalid_input_nonzero (test_acceptance.CliTests.test_cli_invalid_input_nonzero) ... ok
+test_cli_normal_exit_zero_and_trace (test_acceptance.CliTests.test_cli_normal_exit_zero_and_trace) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.252s
+
+OK

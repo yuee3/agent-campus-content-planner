@@ -1,0 +1,6 @@
+{
+  "topic": "校园咖啡节",
+  "budget": 20,
+  "deadline": "2026-11-05",
+  "inject": { "script_fail_once": false }
+}

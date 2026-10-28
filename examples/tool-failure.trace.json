@@ -1,0 +1,191 @@
+{
+  "run_id": "r-adf54ca8",
+  "started_at": "2026-10-28T17:39:48",
+  "task": {
+    "topic": "校园咖啡节",
+    "budget": 20,
+    "deadline": "2026-11-05",
+    "inject": {
+      "script_fail_once": true
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "tool_call",
+      "tool": "search_materials",
+      "tool_args": {
+        "topic": "校园咖啡节"
+      },
+      "observation": {
+        "status": "ok",
+        "topic": "校园咖啡节",
+        "tiers_available": [
+          "lite",
+          "standard"
+        ],
+        "materials": {
+          "standard": {
+            "summary": "标准方案：短视频+图文双渠道传播",
+            "items": [
+              "M-A1 咖啡拉花教学短视频脚本素材",
+              "M-A2 摊主故事采访图文素材",
+              "M-A3 现场歌单与氛围布置素材"
+            ],
+            "content_forms": [
+              "60s 短视频脚本",
+              "图文推送 x2"
+            ]
+          },
+          "lite": {
+            "summary": "精简方案：图文单渠道传播",
+            "items": [
+              "M-B1 摊主故事采访图文素材",
+              "M-B2 活动信息长图素材"
+            ],
+            "content_forms": [
+              "图文推送 x1"
+            ]
+          }
+        }
+      },
+      "decision_basis": "尚未检索主题 校园咖啡节 的素材与可用档位"
+    },
+    {
+      "step": 2,
+      "action": "tool_call",
+      "tool": "generate_script",
+      "tool_args": {
+        "topic": "校园咖啡节",
+        "tier": "standard"
+      },
+      "observation": {
+        "status": "failed",
+        "topic": "校园咖啡节",
+        "tier": "standard",
+        "error": "transient",
+        "message": "脚本生成失败：生成服务临时不可用（注入的单次故障）"
+      },
+      "decision_basis": "先用初始方案档位 standard 生成脚本大纲"
+    },
+    {
+      "step": 3,
+      "action": "tool_call",
+      "tool": "generate_script",
+      "tool_args": {
+        "topic": "校园咖啡节",
+        "tier": "standard"
+      },
+      "observation": {
+        "status": "ok",
+        "topic": "校园咖啡节",
+        "tier": "standard",
+        "script": {
+          "title": "《校园咖啡节》标准档活动脚本",
+          "hook": "用 15 秒点出校园咖啡节的核心看点",
+          "sections": [
+            "60s 短视频脚本",
+            "图文推送 x2"
+          ],
+          "materials_used": [
+            "M-A1 咖啡拉花教学短视频脚本素材",
+            "M-A2 摊主故事采访图文素材",
+            "M-A3 现场歌单与氛围布置素材"
+          ]
+        }
+      },
+      "decision_basis": "generate_script 上次返回失败（脚本生成失败：生成服务临时不可用（注入的单次故障）），按失败处理策略重试一次，保留已成功步骤"
+    },
+    {
+      "step": 4,
+      "action": "tool_call",
+      "tool": "estimate_cost",
+      "tool_args": {
+        "tier": "standard"
+      },
+      "observation": {
+        "status": "ok",
+        "tier": "standard",
+        "currency": "模拟单位",
+        "total": 12,
+        "breakdown": {
+          "script_writing": 6,
+          "channel_promotion": 6
+        }
+      },
+      "decision_basis": "按当前脚本的档位调用费用表估算成本（费用事实由工具给出）"
+    },
+    {
+      "step": 5,
+      "action": "tool_call",
+      "tool": "save_plan",
+      "tool_args": {
+        "topic": "校园咖啡节",
+        "tier": "standard",
+        "estimated_total": 12,
+        "script_title": "《校园咖啡节》标准档活动脚本"
+      },
+      "observation": {
+        "status": "saved",
+        "plan_id": "p-1",
+        "plan_key": "校园咖啡节:standard",
+        "plan": {
+          "plan_id": "p-1",
+          "plan_key": "校园咖啡节:standard",
+          "topic": "校园咖啡节",
+          "tier": "standard",
+          "estimated_total": 12,
+          "script_title": "《校园咖啡节》标准档活动脚本",
+          "created_at": "2026-10-28T17:39:48"
+        }
+      },
+      "decision_basis": "standard 档估算 12 在预算 20 内，保存该方案"
+    }
+  ],
+  "final": {
+    "steps_used": 6,
+    "final_status": "completed",
+    "message": "方案已保存（仅保存方案，未执行真实投放）",
+    "plan": {
+      "steps": [
+        {
+          "tool": "search_materials",
+          "tier": null,
+          "status": "success"
+        },
+        {
+          "tool": "generate_script",
+          "tier": "standard",
+          "status": "failed"
+        },
+        {
+          "tool": "generate_script",
+          "tier": "standard",
+          "status": "success"
+        },
+        {
+          "tool": "estimate_cost",
+          "tier": "standard",
+          "status": "success"
+        },
+        {
+          "tool": "save_plan",
+          "tier": null,
+          "status": "success"
+        }
+      ]
+    },
+    "cost": {
+      "budget": 20,
+      "estimated_total": 12,
+      "breakdown": {
+        "script_writing": 6,
+        "channel_promotion": 6
+      },
+      "within_budget": true
+    },
+    "saved_plan_id": "p-1",
+    "incomplete_reason": null,
+    "step_limit": 12
+  }
+}
